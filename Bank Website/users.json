@@ -1,0 +1,68 @@
+{
+  "anjali123": {
+    "fullname": "Anjali Bhati",
+    "email": "anjalithakur23@gmail.com",
+    "phone": "9765896045",
+    "password": "0801",
+    "balance": 0,
+    "transactions": [
+      {
+        "datetime": "2025-11-02 16:11:49",
+        "type": "Deposit",
+        "amount": 2000,
+        "balance": 2000
+      },
+      {
+        "datetime": "2025-11-02 16:11:59",
+        "type": "Deposit",
+        "amount": 1000,
+        "balance": 3000
+      },
+      {
+        "datetime": "2025-11-02 16:12:16",
+        "type": "Withdraw",
+        "amount": 3000,
+        "balance": 0
+      }
+    ]
+  },
+  "aaru08": {
+    "fullname": "Aaru Thakur",
+    "email": "anjalithakur08@gmail.com",
+    "phone": "9818525678",
+    "password": "0801",
+    "balance": 28250,
+    "transactions": [
+      {
+        "datetime": "2025-11-02 18:12:17",
+        "type": "Deposit",
+        "amount": 20000,
+        "balance": 20000
+      },
+      {
+        "datetime": "2025-11-02 18:12:32",
+        "type": "Deposit",
+        "amount": 1000,
+        "balance": 21000
+      },
+      {
+        "datetime": "2025-11-02 18:12:41",
+        "type": "Withdraw",
+        "amount": 3550,
+        "balance": 17450
+      },
+      {
+        "datetime": "2025-11-02 18:13:12",
+        "type": "Deposit",
+        "amount": 12000,
+        "balance": 29450
+      },
+      {
+        "datetime": "2025-11-02 18:13:18",
+        "type": "Withdraw",
+        "amount": 1200,
+        "balance": 28250
+      }
+    ]
+  }
+}

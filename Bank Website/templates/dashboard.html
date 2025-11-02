@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Dashboard - ABC Bank</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    .small { font-size:14px; color:#555; }
+    .txn-green { color: green; font-weight:600; }
+    .txn-red { color: red; font-weight:600; }
+    .btn { display:inline-block; padding:8px 12px; background:#28a745; color:white; border-radius:6px; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="{{ 'msg-success' if category=='success' else 'msg-error' }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <h2>Welcome, {{ fullname }} ({{ username }})</h2>
+    <p class="small"><b>Email:</b> {{ email }} &nbsp; | &nbsp; <b>Phone:</b> {{ phone }}</p>
+
+    <h3>Current Balance: ₹{{ balance }}</h3>
+    <p class="small">Total Deposits: ₹{{ total_deposits }} &nbsp; | &nbsp; Total Withdrawals: ₹{{ total_withdrawals }}</p>
+
+    <hr>
+
+    <h4>Deposit Money</h4>
+    <form method="POST" action="/deposit">
+      <input type="number" name="amount" min="1" placeholder="Enter amount" required>
+      <button type="submit">Deposit</button>
+    </form>
+
+    <h4 style="margin-top:12px;">Withdraw Money</h4>
+    <form method="POST" action="/withdraw">
+      <input type="number" name="amount" min="1" placeholder="Enter amount" required>
+      <button type="submit">Withdraw</button>
+    </form>
+
+    <div style="margin-top:16px;">
+      <a class="btn" href="{{ url_for('transactions') }}">View Transactions</a>
+      <a style="margin-left:10px;" class="btn" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+  </div>
+</body>
+</html>
